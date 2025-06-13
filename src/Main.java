@@ -8,20 +8,25 @@ public class Main {
     private static final BankAccount bankAccount = new BankAccount(1000);
 
     public static void main(String[] args) {
+        System.out.println("-----------------------------------------------------");
+        System.out.println("Welcome to Payload program!!!");
+        System.out.println("-----------------------------------------------------");
 
         start(bankAccount);
 
+        System.out.println("-----------------------------------------------------");
         System.out.println("Program has finished!!!");
+        System.out.println("-----------------------------------------------------");
     }
 
     public static void start(BankAccount bankAccount) {
         while (true) {
-            System.out.println("""
+            System.out.print("""
                 1. Make a withdrawal
                 2. Top up the balance
                 3. Show balance
                 0. Quit
-                """);
+                :\s""");
             int option = input.nextInt();
 
             switch (option) {
@@ -46,7 +51,9 @@ public class Main {
     }
 
     public static void withdraw(BankAccount bankAccount) {
-        System.out.print("How much would you like to withdraw from the card?");
+        System.out.print("""
+                How much would you like to withdraw from the card?
+                :\s""");
         double amount = input.nextDouble();
 
         try {
@@ -57,7 +64,10 @@ public class Main {
     }
 
     private static void topUpBalance(BankAccount bankAccount) {
-        System.out.print("How much would you like to top up your card? ");
+        System.out.print("""
+                How much would you like to top up your card?
+                :\s
+                """);
         double amount = input.nextDouble();
 
         try {

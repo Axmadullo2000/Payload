@@ -16,8 +16,8 @@ public class BankAccount {
         if (amount * 1.07 > balance) {
             throw new InsufficientBalanceException("Insufficient funds for the transaction!");
         }else {
-            balance -= amount * 1.05;
-            System.out.println("Money withdrawn successfully! Remaining balance: " + balance);
+            balance -= amount * 1.07;
+            System.out.printf("Money withdrawn successfully! Remaining balance: %.2f\n", balance);
         }
     }
 
@@ -26,7 +26,7 @@ public class BankAccount {
             throw new AmountLimitExceededException("Limit exceeded. The maximum allowed amount is 10 million.");
         }else {
             balance += amount * 0.95;
-            System.out.println("After 5% fee, balance has been topped up! New balance: " + balance);
+            System.out.printf("After 5 percent fee, balance has been topped up! New balance: %.2f\n", balance);
         }
     }
 
